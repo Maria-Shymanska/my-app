@@ -9,6 +9,7 @@ export default function Page({ params }: PageProps) {
   return (
     <>
       <Header>Company ({params.id})</Header>
+      console.log(params.id)
     </>
   );
 }
