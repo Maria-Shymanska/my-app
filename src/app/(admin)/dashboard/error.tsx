@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import Button from '../../../componenets/button';
+import Button from '../../componenets/button';
 
 export interface ErrorComponentProps {
   error: Error;

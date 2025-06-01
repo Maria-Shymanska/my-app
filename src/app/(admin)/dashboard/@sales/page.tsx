@@ -1,9 +1,9 @@
 import React from 'react';
-import { getSummarySales } from '../../../../../lib/api';
-import SummaryTable from '../../../../componenets/summary-table';
-import SummaryTableHeader from '../../../../componenets/summapy-table-header';
-import SummaryTableCell from '../../../../componenets/summary-table-cell';
-import DashboardCard from '../../../../componenets/dashboard-card';
+import { getSummarySales } from '../../../../lib/api';
+import SummaryTable from '../../../componenets/summary-table';
+import SummaryTableHeader from '../../../componenets/summapy-table-header';
+import SummaryTableCell from '../../../componenets/summary-table-cell';
+import DashboardCard from '../../../componenets/dashboard-card';
 
 export interface PageProps {}
 
