@@ -1,25 +1,17 @@
-import React from 'react';
-import { dehydrate, HydrationBoundary } from '@tanstack/react-query';
-import { getCompanies } from '../../../lib/api';
+import { dehydrate } from '@tanstack/react-query';
 import getQueryClient from '../../../lib/utils/getQueryClient';
-import CompanyTable from '../../componenets/company-table';
+import { getCompanies } from '../../../lib/api';
+import ClientWrapper from './ClientWrapper';
 
-export interface PageProps {}
-
-export default async function Page({}: PageProps) {
+export default async function Page() {
   const queryClient = getQueryClient();
 
   await queryClient.prefetchQuery({
     queryKey: ['companies'],
-    queryFn: () => getCompanies({ cache: 'no-store' }),
-    staleTime: 10 * 1000,
+    queryFn: getCompanies,
   });
 
   const dehydratedState = dehydrate(queryClient);
 
-  return (
-    <HydrationBoundary state={dehydratedState}>
-      <CompanyTable />
-    </HydrationBoundary>
-  );
+  return <ClientWrapper dehydratedState={dehydratedState} />;
 }
